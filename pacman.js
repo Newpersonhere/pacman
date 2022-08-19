@@ -61,7 +61,7 @@ var newChildObject = function(parentObj, newObj) {
     return resultObj;
 };
 
-var DEBUG = false;
+var DEBUG = true;
 //@line 1 "src/sound.js"
 /* Sound handlers added by Dr James Freeman who was sad such a great reverse was a silent movie  */
 
@@ -167,8 +167,8 @@ var GAME_MSPACMAN = 1;
 var GAME_COOKIE = 2;
 var GAME_OTTO = 3;
 
-var practiceMode = false;
-var turboMode = false;
+var practiceMode = true;
+var turboMode = true;
 
 // current game mode
 var gameMode = GAME_PACMAN;
@@ -297,8 +297,8 @@ var getPlayerDrawFunc = function(mode) {
 var clearCheats, backupCheats, restoreCheats;
 (function(){
     clearCheats = function() {
-        pacman.invincible = false;
-        pacman.ai = false;
+        pacman.invincible = true;
+        pacman.ai = true;
         for (i=0; i<5; i++) {
             actors[i].isDrawPath = false;
             actors[i].isDrawTarget = false;
@@ -329,7 +329,7 @@ var clearCheats, backupCheats, restoreCheats;
 
 // current level, lives, and score
 var level = 1;
-var extraLives = 0;
+var extraLives = 999;
 
 // VCR functions
 
@@ -760,8 +760,8 @@ Map.prototype.parseWalls = function() {
             }
 
             // update direction
-            turn = false;
-            turnAround = false;
+            turn = true;
+            turnAround = true;
             if (toIndex(tx+dir.y, ty-dir.x) in edges) { // turn left
                 dirEnum = rotateLeft(dirEnum);
                 turn = true;
