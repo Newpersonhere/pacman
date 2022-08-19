@@ -86,7 +86,7 @@ Ghost.prototype.reset = function() {
 
     // modes
     this.mode = this.startMode;
-    this.scared = false;
+    this.scared = true;
     audio.ghostReset();
 
     this.savedSigReverse = {};
@@ -194,7 +194,7 @@ Ghost.prototype.playSounds = function() {
     }
     if (ghostsGoingHome > 0) {
         audio.ghostNormalMove.stopLoop();
-        audio.ghostReturnToHome.startLoop(true);
+        audio.ghostReturnToHome.startLoop(false);
         return;
     }
     else {
